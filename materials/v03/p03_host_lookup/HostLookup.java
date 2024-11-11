@@ -1,4 +1,4 @@
-package p03_host_lookup;
+package materials.v03.p03_host_lookup;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package p01_intro;
+package materials.v02.p01_intro;
 
 final class ThreadsIntroMain {
 

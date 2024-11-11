@@ -1,4 +1,4 @@
-package p04_network_interfaces;
+package materials.v03.p04_network_interfaces;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;

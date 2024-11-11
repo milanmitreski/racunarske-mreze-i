@@ -1,4 +1,4 @@
-package url.g1.resourcegetter;
+package materials.v04.p03_resource_getter;
 
 import java.io.BufferedReader;
 import java.io.IOException;

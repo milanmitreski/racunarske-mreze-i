@@ -1,4 +1,4 @@
-package p05_pooled_weblog;
+package materials.v03.p05_pooled_weblog;
 
 import java.io.FileInputStream;
 

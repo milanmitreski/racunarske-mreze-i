@@ -1,4 +1,4 @@
-package p02_bank;
+package materials.v02.p02_bank;
 
 final class BankTest {
     private static final int ACCOUNTS = 5;

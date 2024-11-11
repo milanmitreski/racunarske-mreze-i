@@ -1,4 +1,4 @@
-package p05_print_streams;
+package materials.v01.p05_print_streams;
 
 import java.io.*;
 import java.util.Scanner;

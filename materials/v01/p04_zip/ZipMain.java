@@ -1,4 +1,4 @@
-package p04_zip;
+package materials.v01.p04_zip;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

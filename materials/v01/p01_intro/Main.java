@@ -1,4 +1,4 @@
-package p01_intro;
+package materials.v01.p01_intro;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;

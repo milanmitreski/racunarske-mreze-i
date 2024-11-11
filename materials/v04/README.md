@@ -1,0 +1,1 @@
+Određeni materijali su razvijeni na časovima vežbi (zajedno sa studentima). Ostatali materijali preuzeti su sa GitHub repozitorijuma ([link](https://github.com/MATF-Computer-Networks/RM-materials/)) kolege Ivana Ristovića.

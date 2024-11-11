@@ -1,4 +1,4 @@
-package url.g1.conditionaldownloader;
+package materials.v04.p04_conditional_downloader;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

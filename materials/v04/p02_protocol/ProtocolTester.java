@@ -1,4 +1,4 @@
-package url.g2.protocol;
+package materials.v04.p02_protocol;
 
 import java.net.MalformedURLException;
 import java.net.URL;

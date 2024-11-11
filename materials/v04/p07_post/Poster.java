@@ -1,8 +1,8 @@
-package url.g2.post;
+package materials.v04.p07_post;
 
 // Using QueryBuilder from previous example
 
-import url.g2.querybuilder.QueryBuilder;
+import materials.v04.p06_query_builder.QueryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,6 +30,9 @@ final class Poster {
 	}
 
 	InputStream post() throws IOException {
+		// Do sada, zahtevi koji smo slali bili su GET zahtevi, gde se parametri salju u okviru samog URL-a
+		// Pored GET zahteva, postoji i POST zahtev, gde se parametri salju u okviru tela HTTP zahteva (body)
+
 		// Open the connection and prepare it for POST
 		URLConnection uc = url.openConnection();
 		uc.setDoOutput(true);

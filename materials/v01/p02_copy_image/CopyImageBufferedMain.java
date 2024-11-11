@@ -1,4 +1,4 @@
-package p02_copy_image;
+package materials.v01.p02_copy_image;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

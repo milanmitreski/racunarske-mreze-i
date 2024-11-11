@@ -1,4 +1,4 @@
-package url.g2.post;
+package materials.v04.p07_post;
 
 import java.io.BufferedReader;
 import java.io.IOException;

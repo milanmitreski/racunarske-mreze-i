@@ -1,7 +1,10 @@
-package p05_pooled_weblog;
+package materials.v03.p05_pooled_weblog;
 
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 // This class has the task to process the log file line-by-line and use
 // threads which will process one line at a time. The log file is provided

@@ -1,4 +1,4 @@
-package p03_copy_text;
+package materials.v01.p03_copy_text;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

@@ -1,4 +1,4 @@
-package p02_bank;
+package materials.v02.p02_bank;
 
 import java.util.concurrent.ThreadLocalRandom;
 

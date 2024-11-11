@@ -1,4 +1,4 @@
-package url.g2.querybuilder;
+package materials.v04.p06_query_builder;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -23,6 +23,9 @@ public class QueryBuilder {
         this.encode(name, value);
     }
 
+    // Ako bi neki parametar imao vrednost "Pera Peric", s obzirom
+    // da URL ne sme da sadrzi beline, to znaci da bi morali da beline
+    // enkodiramo! Za to koristimo URLEncoder klasu:
     private void encode(String name, String value) {
         this.url.append(URLEncoder.encode(name, StandardCharsets.UTF_8));
         this.url.append("=");

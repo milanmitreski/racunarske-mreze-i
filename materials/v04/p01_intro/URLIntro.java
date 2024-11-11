@@ -1,9 +1,11 @@
-package url.g1.intro;
+package materials.v04.p01_intro;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.*;
+import java.net.InetAddress;
+import java.net.URL;
+import java.net.URLConnection;
 
 public class URLIntro {
 

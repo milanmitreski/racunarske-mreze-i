@@ -1,4 +1,4 @@
-package p01_intro;
+package materials.v03.p01_intro;
 
 import java.net.Inet4Address;
 import java.net.Inet6Address;

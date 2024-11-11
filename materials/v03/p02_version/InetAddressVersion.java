@@ -1,4 +1,4 @@
-package p02_version;
+package materials.v03.p02_version;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

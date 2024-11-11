@@ -1,4 +1,4 @@
-package url.g2.querybuilder;
+package materials.v04.p06_query_builder;
 
 import java.io.BufferedReader;
 import java.io.IOException;

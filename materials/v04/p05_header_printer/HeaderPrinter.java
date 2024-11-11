@@ -1,4 +1,4 @@
-package url.g1.headerprinter;
+package materials.v04.p05_header_printer;
 
 import java.io.IOException;
 import java.net.URL;

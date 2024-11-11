@@ -1,4 +1,4 @@
-package p03_blocking_queue;
+package materials.v02.p03_blocking_queue;
 
 import java.io.IOException;
 import java.nio.file.DirectoryStream;

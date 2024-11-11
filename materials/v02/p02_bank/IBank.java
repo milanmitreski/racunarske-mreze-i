@@ -1,4 +1,4 @@
-package p02_bank;
+package materials.v02.p02_bank;
 
 // Using interface because we will have multiple examples of Banks
 // having different synchronization techniques
