@@ -1,0 +1,3 @@
+Hello world! This is an example of a F2le FilteriNg proGram.
+Now, we will test some-Uncommon separators as Well...
+We. also. need. To. Test. ... empty......,-1 Strings.
