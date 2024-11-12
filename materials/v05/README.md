@@ -92,7 +92,7 @@ Dakle, na ovaj način možemo dati skup IP adresa podeliti u mreže različitih 
 
 ### Classful adresiranje
 
-Zadatak 1. Odrediti klase kojoj pripadaju naredne adrese i da li se mogu koristiti kao javne adrese?
+**Zadatak 1.** Odrediti klase kojoj pripadaju naredne adrese i da li se mogu koristiti kao javne adrese?
 
 - `10.11.12.13` - klasa A - ne, privatna adresa
 - `172.30.40.50` - klasa B - ne, privatna adresa
@@ -108,7 +108,7 @@ Zadatak 1. Odrediti klase kojoj pripadaju naredne adrese i da li se mogu koristi
 
 ### Classless adresiranje
 
-Zadatak 2. Ispitati da li date IP adrese mogu biti adrese hostova.
+**Zadatak 2**. Ispitati da li date IP adrese mogu biti adrese hostova.
 
 - `147.91.64.0/22` - ne, adresa mreže\
     _Objašnjenje_: Prvih 22 bita određuju levi deo adrese. Da bi data adresa bila adresa hosta, mora biti različita od adrese mreže i od broadcast adrese. Ovo se ispituje određivanjem levog dela adrese, nakon čega je potrebno utvrditi da li se desni deo adrese sastoji od svih 0 (adresa mreže) ili svih 1 (broadcast adresa).
@@ -171,6 +171,342 @@ Zadatak 2. Ispitati da li date IP adrese mogu biti adrese hostova.
                        - broadcast adresa 
   ```
   
-Zadatak 3.
+**Zadatak 3.** Za zadate mreže odrediti broj hostova, adresu mreže, broadcast adresu, adresu za prvi i poslednji uređaj u mreži.
 
-Zadatak 4.
+- `172.30.40.50/16`
+  ```
+    Broj hostova: 2^16 - 2 
+      Ukupno imamo 32 - 16 = 16 preostalih bitova nakon maske, pa imamo 2^16 mogućih adresa i znamo da su 
+      2 zauzete za adresu mreže i broadcast adresu pa oduzimamo 2
+    Adresa mreže: 172.30.0.0/16
+      Znamo da u adresi mreže posle maske se nalaze svi bitovi sa vrednošću 0, pa su u ovom slučaju u poslednja 2 bajta sve nule.  
+    Broadcast adresa: 172.30.255.255/16
+      Slično, znamo da je za broadcast adresu svaki bit posle maske jednak 1, pa su u poslednja 2 bajta sve jedinice.
+    Prvi uređaj: 172.30.0.1/16
+      Adresa je za jedan veća od adrese mreže.
+    Poslednji uređaj: 172.30.255.254/16
+      Adresa je za jedan manja od broadcast adrese.
+  ```
+- `10.11.12.13/20`
+  ```
+    Broj hostova: 2^12-2
+      Slično kao gore, samo što je broj bitova nakon maske 32-20 = 12 i 2 adrese za mrežu i broadcast.
+    Adresa mreže: 10.11.0.0/20
+      Ako raspišemo binarno 10.11.12.13/20 to će biti 0000 1010.0000 1011.0000 |1100.0000 1101 gde je maska naglašena sa |.
+      Prema tome vidimo da nakon | treba da budu svi bitovi nula pa dobijamo gorenavedenu adresu
+    Broadcast: 10.11.15.255/20
+      Isti princip kao za adresu mreže s tim što posle maske postavljamo sve jedinice na bitove desno pa dobijamo:
+      0000 1010.0000 1011.0000 |1111.1111 1111
+    Prvi: 10.11.0.1/20
+      Za jedan veće od adrese mreže.
+    Poslednji: 10.11.15.254/20
+      Za jedan manje od broadcast adrese.
+  ```
+
+- `10.11.12.130/26`
+  ```
+    Broj hostova: 2^6 - 2 = 62
+      Posle maske je 32-26=6 bitova i 2 adrese za adresu mreže i broadcast.
+    Adresa mreže: 10.11.12.128/26
+      Vidimo da će maska se završiti u poslednjem bajtu.
+      130 = 10|00 0010 i maska je do |. Nakon | treba da su sve 0 za adresu mreže, pa dobijamo 10|00 0000 što je zapravo 128.
+    Broadcast: 10.11.12.191/26
+      Slično, sad treba sve posle maske da je 1 što je: 10|11 1111 odnosno 191
+    Prvi: 10.11.12.129/26
+    Poslednji: 10.11.12.190/26
+  ```
+- `10.11.12.130/30`
+  ```
+    Hostova: 2^2-2 = 2
+    Adresa mreže: 10.11.12.128/30
+      130=1000 00|10, pa posle | idu sve nule.
+    Broadcast: 10.11.12.131/30
+      130=1000 00|10, pa posle maske idu svi bitovi 1/
+    Prvi: 10.11.12.129/30
+    Poslednji: 10.11.12.130/30
+
+    Napomena, s obzirom da samo dva hosta immao u ovoj mreži ovakva mreža se naziva point to point (uglavnom se samo 2 rutera nalaze u njoj)
+  ```
+
+
+**Zadatak 4.** Skup adresa 178.148.0.0/24 podeliti na naredne podmreže
+
+  - A ima 120 računara
+  - B ima 61 računara
+  - C ima 25 računara
+  - D ima 6 računara
+  - 1 point-to-point segment
+
+```
+178.148.0.0/24
+
+Sortiramo prvo sve mreže po veličini od najveće do najmanje. U ovom slučaju je to A,B,C,D, ptp (point-to-point)
+Ako data mreža treba da sadrži određeni broj računara treba da vidimo koliko bitova je potrebno za tu mrežu.
+Međutim, tu treba uračunati i adresu mreže i broadcast adresu. Takođe, treba imati u vidu i adresu rutera! 
+Za ptp mrežu oba hosta će biti ruteri pa tu treba imati u vidu samo adresu mreže i broadcast adresu.
+
+A: 120 + 3 <= 128 (7 bitova)
+adresa mreže: 178.148.0.0/25    
+broadcast: 178.148.0.127/25     
+
+Gledamo koliko je potrebno bitova za A. Na broj računara (120) dodajemo 3 (adresa mreže, broadcast i ruter).
+Vidimo da je potrebno 7 bitova, pa će maska biti 32-7=25. Poslednji bajt izgleda 0|000 0000 tj. 0 za adresu mreže i
+0|111 1111 tj. 127 za broadcast adresu gde | predstavlja granicu za masku.
+
+B: 61 + 3 <= 64 (6 bitova)
+adresa mreže: 178.148.0.128/26  
+broadcast: 178.148.0.191/26     
+
+Ovde nam je potrebno 6 bitova pa će maska biti 26
+Kako mreže ne smeju da imaju preklapanje, adresa mreže B mora da bude veća od broadcast adrese A. 
+Odnosno, nalaziće se na sledećoj adresi posle broadcasta, 178.148.0.128/26, s tim što je maska za 1 veća.
+Poslednji bajt u adresi mreže je onda 10|00 0000 gde je | kraj maske.
+Broadcast će nam u poslednjem bajtu izgledati 10|11 1111 odnosno 191.
+
+C: 25 + 3 <= 32 (5 bitova)
+adresa mreže: 178.148.0.192/27
+broadcast: 178.148.0.223/27
+
+Slično, trebaće nam 5 bitova pa je maska dužine 27 i krećemo od sledeće adrese nakon broadcasta od B, odnosno 192 s maskom 27.
+Poslednji bajt u adresi mreže je 110|0 0000 gde je | kraj maske.
+Onda znamo da je broadcast adresa u poslednjem bajtu: 110|1 1111 odnosno 223.
+
+D: 6 + 3 <= 16 (4 bita)
+adresa mreže: 178.148.0.224/28
+broadcast: 178.148.0.239/28
+
+Opet ponavljamo postupak, adresa za mrežu je za 1 veća od prethodnog broadcasta i maska će u ovom slućaju biti 28, 
+pa je adresa mreže u poslednjem bajtu 1110 |0000 odnosno 224
+S druge strane broadcast adresa u poslednjem bajtu je 1110 |1111 odnosno 239
+
+ptp: 2 + 2 <= 4 (2 bita)
+adresa mreze: 178.148.0.240/30
+broadcast: 178.148.0.243/30
+
+2 rutera i adresa mreže i broadcast je ptp mreža. Ovde će maska biti 30, i adresa mreže u poslednjem bajtu za 1 veća od broadcast D,
+tj. 1111 00|00 = 240 , dok je onda broadcast za ptp: 1111 00|11 = 243.
+
+```
+
+  **Zadatak 5.** Postavka zadatka je na sledećoj slici.
+  ![alt text](image1.png)
+  ![alt text](image2.png)
+
+  ```
+  172.21.244.0/22
+
+  Slično kao u prethodnom zadatku, prvo sortiramo mreže po veličini.
+  Imamo redosled 2A, 1A, 1C, 1B, ptp. 
+  Tražimo koliko je bitova potrebno za svaku (dodajemo adersu mreže, brodcast adresu i adresu rutera za mreže koje nisu ptp)
+
+  2A: 
+  340 + 3 <=512 (9 bitova)
+  adresa mreže: 172.21.244.0/23
+  broadcast: 172.21.245.255/23
+  ruter: 172.21.244.1/23 (najmanja adresa u mreži)
+  PC-8: 172.21.245.254/23 (najviša adresa u mreži)
+
+  Maska će biti dužine 32-9=23.
+  172.21.244.0 =172.21.1111 0100.0000 0000.
+  Kad stavimo masku na 23. bit: 172.21.1111 010|0.0000 0000, pa je adresa mreže 172.21.244.0/23.
+  S druge strane broadcast će biti: 172.21.1111 010|1.1111 1111, tj. 172.21.245.255/23
+
+
+  1A: 
+  180 + 3 <=256 (8 bitova)
+  adresa mreže: 172.21.246.0/24
+  broadcast: 172.21.246.255/24
+  ruter: 172.21.246.1/24 (najmanja adresa u mreži)
+  PC-1: 172.21.246.2/24 (druga najmanja adresa u mreži)
+  PC-2: 172.21.246.254/24 (najveća adresa u mreži)
+
+  Gledamo sledeću adresu posle broadcasta u 2A i gledamo kako se maska menja, u ovom slučaju će biti dužine 24.
+  Tada je adresa mreže 172.21.246.|0000 0000,
+  a broadcast: 172.21.246.|1111 1111 i tako dobijamo gornji rezultat.
+
+  1C: 
+  100 + 3 <= 128 (7 bitova)
+  adresa mreže: 172.21.247.0/25
+  broadcast: 172.21.247.127/25
+  ruter: 172.21.247.1/25 (najmanja adresa)
+  PC-3: 172.21.247.2/25 (druga najmanja)
+  PC-5: 172.21.247.126/25 (najveća adresa)
+
+  Nakon prethodne broadcast adrese sledi: 172.21.247.0, ali ovde imamo dužinu maske 25,
+  pa je adresa mreže 172.21.247.0|000 0000, 
+  a broadcast 172.21.247.0|111 1111
+
+  1B:
+  5+3 <=8 (3 bita)
+  adresa mreže: 172.21.247.128/29
+  broadcast: 172.21.247.135/29
+  ruter: 172.21.247.129/29 (najmanja adresa)
+
+  Sad je maska dužine 29, a sledeća adresa posle broadcasta 1C je 172.21.247.128 
+  i onda je 172.21.247.1000 0|000 adresa mreže,
+  a broadcast 172.21.247.1000 0|111
+
+  ptp: 
+  2 + 2 <=4 (2 bita)
+  adresa mreže: 172.21.247.136/30
+  broadcast: 172.21.247.139/30
+  R-Dep1: 172.21.247.137/30 (manja adresa)
+  R-Dep2: 172.21.247.138/30 (veća adresa)
+
+  Maska je dužine 32-2=30.
+  Adresa mreže 172.21.247.1000 10|00,
+  broadcast adresa: 172.21.247.1000 10|11
+  ```
+**Zadatak 6.**
+![alt text](image.png)
+
+```
+Sve je isto kao i u prethodnom zadatku, s tim što nemamo ptp mrežu nego su nam 4 rutera na kraju u podmreži zajedničkoj.
+
+192.168.101.192/22
+
+R1: 
+25 + 3 <= 32 (5 bitova)
+adresa mreže: 192.168.101.192/27
+broadcast: 192.168.101.223/27
+
+192 = 110|0 0000 za adresu mreže
+223 = 110|1 1111 za broadcast adresu
+
+R3: 
+10 + 3 <= 16 (4 bita)
+adresa mreže: 192.168.101.224/28
+broadcast: 192.168.101.239/28
+
+224 = 1110 |0000
+239 = 1110 |1111
+
+R2: 
+5 + 3 <= 8 (3 bita)
+adresa mreže: 192.168.101.240/29
+broadcast: 192.168.101.247/29
+
+240 = 1111 0|000
+237 = 1111 0|111
+
+R4: 
+4 + 3 <= 8 (3 bita)
+adresa mreže: 192.168.101.248/29
+broadcast: 192.168.101.255/29
+
+248 = 1111 1|000
+255 = 1111 1|111
+
+R1234: 
+4 + 2 <= 8 (3 bita)
+adresa mreže: 192.168.102.0/29
+broadcast: 192.168.102.7/29
+
+4 rutera i adresa mreže i broadcast
+Prelazimo 255, pa se povećava vrednost u prethodnom bajtu na 102.
+U poslednjem bajtu imamo 0000 0|000 za vrednost adrese mreže i
+0000 0|111 za broadcast
+
+```
+
+**Zadatak 7.** 
+![alt text](image4.png)
+Takođe se u zadatku traži kolika je maska najmanje potrebna da bismo opisali sve podmreže iz zadatka.
+
+```
+Princip rešavanja je isti kao do sada.
+Jedino na šta treba obratiti pažnju jeste da imamo dosta ptp segmenata
+i treba da budemo pažljivi da ne propustimo neki. 
+Najbolje da nadjemo neki poredak po kom ćemo ići, npr. svi ptp koji imaju iz rutera 1, pa iz 2, itd.
+
+Na kraju je potrebno samo naći najmanju masku, a to možemo uraditi ili tako što
+saberemo ukupno bitova iz svake podmreže koji su potrebni za opisivanje pa na kraju oduzmemo taj broj od 32 
+ili tako što svaku adresu mreže raspišemo binarno i nadjemo najveći zajednički deo s leva na desno.
+
+10.255.128.0
+
+M1: 
+250 + 3 <= 256 (8 bitova)
+adresa mreze: 10.255.128.0/24
+broadcast adresa: 10.255.128.255/24
+
+M2: 2
+00 + 3 <= 256 (8 bitova)
+adresa mreze: 10.255.129.0/24
+broadcast adresa: 10.255.129.255/24
+
+M3: 
+150 + 3 <= 256 (8 bitova)
+adresa mreže: 10.255.130.0/24
+broadcast adresa: 10.255.130.255/24
+
+M5: 1
+25 + 3 <= 128 (7 bitova)
+adresa mreže: 10.255.131.0/25
+broadcast adresa: 10.255.131.127/25
+
+M4: 
+30 + 3 <= 64 (6 bitova)
+adresa mreže: 10.255.131.128/26
+broadcast adresa: 10.255.131.191/26
+
+M6: 
+15 + 3 <= 32 (5 bitova)
+adresa mreže: 10.255.131.192/27
+broadcast adresa: 10.255.131.223/27
+
+M12: 
+2 + 2 <=4 (2 bita)
+adresa mreže: 10.255.131.224/30
+broadcast adresa: 10.255.131.227/30
+
+M16: 
+2 + 2 <=4 (2 bita)
+adresa mreže: 10.255.131.228/30
+broadcast adresa: 10.255.131.231/30
+
+M23: 
+2 + 2 <=4 (2 bita)
+adresa mreže: 10.255.131.232/30
+broadcast adresa: 10.255.131.235/30
+
+M24: 
+2 + 2 <=4 (2 bita)
+adresa mreže: 10.255.131.236/30
+broadcast adresa: 10.255.131.239/30
+
+M34: 
+2 + 2 <=4 (2 bita)
+adresa mreže: 10.255.131.240/30
+broadcast adresa: 10.255.131.243/30
+
+M35: 
+2 + 2 <=4 (2 bita)
+adresa mreže: 10.255.131.244/30
+broadcast adresa: 10.255.131.247/30
+
+M45: 
+2 + 2 <=4 (2 bita)
+adresa mreže: 10.255.131.248/30
+broadcast adresa: 10.255.131.251/30
+
+M46: 
+2 + 2 <=4 (2 bita)
+adresa mreže: 10.255.131.252/30
+broadcast adresa: 10.255.131.255/30
+
+Kolika je maska potrebna?
+
+1. nacin:
+4*8 + 256*3 + 128 + 64 + 32 = 32 + 768 + 96 + 128 =  800 + 224 = 1024 = 2^10, pa je maska 22, kao 32-10=22
+
+2. nacin:
+Maska je najduzi zajednicki prefiks s leva na desno. Prva dva bajta su svima ista, od treceg se raazlikuju. 
+U trećem bajtu imamo 128,129,130,131. Bitovski to je:
+1000 00|00
+1000 00|01
+1000 00|10
+1000 00|11
+Prvih 6 bitova za te brojeve su isti => Maska je onda 2*8 + 6 = 22
+
+```
