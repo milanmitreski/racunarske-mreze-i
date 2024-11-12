@@ -300,7 +300,7 @@ tj. 1111 00|00 = 240 , dok je onda broadcast za ptp: 1111 00|11 = 243.
   Tražimo koliko je bitova potrebno za svaku (dodajemo adersu mreže, brodcast adresu i adresu rutera za mreže koje nisu ptp)
 
   2A: 
-  340 + 3 <=512 (9 bitova)
+  340 + 3 <= 512 (9 bitova)
   adresa mreže: 172.21.244.0/23
   broadcast: 172.21.245.255/23
   ruter: 172.21.244.1/23 (najmanja adresa u mreži)
@@ -313,7 +313,7 @@ tj. 1111 00|00 = 240 , dok je onda broadcast za ptp: 1111 00|11 = 243.
 
 
   1A: 
-  180 + 3 <=256 (8 bitova)
+  180 + 3 <= 256 (8 bitova)
   adresa mreže: 172.21.246.0/24
   broadcast: 172.21.246.255/24
   ruter: 172.21.246.1/24 (najmanja adresa u mreži)
@@ -337,7 +337,7 @@ tj. 1111 00|00 = 240 , dok je onda broadcast za ptp: 1111 00|11 = 243.
   a broadcast 172.21.247.0|111 1111
 
   1B:
-  5+3 <=8 (3 bita)
+  5+3 <= 8 (3 bita)
   adresa mreže: 172.21.247.128/29
   broadcast: 172.21.247.135/29
   ruter: 172.21.247.129/29 (najmanja adresa)
@@ -347,7 +347,7 @@ tj. 1111 00|00 = 240 , dok je onda broadcast za ptp: 1111 00|11 = 243.
   a broadcast 172.21.247.1000 0|111
 
   ptp: 
-  2 + 2 <=4 (2 bita)
+  2 + 2 <= 4 (2 bita)
   adresa mreže: 172.21.247.136/30
   broadcast: 172.21.247.139/30
   R-Dep1: 172.21.247.137/30 (manja adresa)
@@ -358,7 +358,7 @@ tj. 1111 00|00 = 240 , dok je onda broadcast za ptp: 1111 00|11 = 243.
   broadcast adresa: 172.21.247.1000 10|11
   ```
 **Zadatak 6.**
-![alt text](image.png)
+![alt text](image3.png)
 
 ```
 Sve je isto kao i u prethodnom zadatku, s tim što nemamo ptp mrežu nego su nam 4 rutera na kraju u podmreži zajedničkoj.
@@ -431,7 +431,7 @@ adresa mreze: 10.255.128.0/24
 broadcast adresa: 10.255.128.255/24
 
 M2: 2
-00 + 3 <= 256 (8 bitova)
+200 + 3 <= 256 (8 bitova)
 adresa mreze: 10.255.129.0/24
 broadcast adresa: 10.255.129.255/24
 
@@ -456,42 +456,42 @@ adresa mreže: 10.255.131.192/27
 broadcast adresa: 10.255.131.223/27
 
 M12: 
-2 + 2 <=4 (2 bita)
+2 + 2 <= 4 (2 bita)
 adresa mreže: 10.255.131.224/30
 broadcast adresa: 10.255.131.227/30
 
 M16: 
-2 + 2 <=4 (2 bita)
+2 + 2 <= 4 (2 bita)
 adresa mreže: 10.255.131.228/30
 broadcast adresa: 10.255.131.231/30
 
 M23: 
-2 + 2 <=4 (2 bita)
+2 + 2 <= 4 (2 bita)
 adresa mreže: 10.255.131.232/30
 broadcast adresa: 10.255.131.235/30
 
 M24: 
-2 + 2 <=4 (2 bita)
+2 + 2 <= 4 (2 bita)
 adresa mreže: 10.255.131.236/30
 broadcast adresa: 10.255.131.239/30
 
 M34: 
-2 + 2 <=4 (2 bita)
+2 + 2 <= 4 (2 bita)
 adresa mreže: 10.255.131.240/30
 broadcast adresa: 10.255.131.243/30
 
 M35: 
-2 + 2 <=4 (2 bita)
+2 + 2 <= 4 (2 bita)
 adresa mreže: 10.255.131.244/30
 broadcast adresa: 10.255.131.247/30
 
 M45: 
-2 + 2 <=4 (2 bita)
+2 + 2 <= 4 (2 bita)
 adresa mreže: 10.255.131.248/30
 broadcast adresa: 10.255.131.251/30
 
 M46: 
-2 + 2 <=4 (2 bita)
+2 + 2 <= 4 (2 bita)
 adresa mreže: 10.255.131.252/30
 broadcast adresa: 10.255.131.255/30
 
@@ -501,12 +501,11 @@ Kolika je maska potrebna?
 4*8 + 256*3 + 128 + 64 + 32 = 32 + 768 + 96 + 128 =  800 + 224 = 1024 = 2^10, pa je maska 22, kao 32-10=22
 
 2. nacin:
-Maska je najduzi zajednicki prefiks s leva na desno. Prva dva bajta su svima ista, od treceg se raazlikuju. 
+Maska je najduzi zajednicki prefiks s leva na desno. Prva dva bajta su svima ista, od treceg se razlikuju. 
 U trećem bajtu imamo 128,129,130,131. Bitovski to je:
 1000 00|00
 1000 00|01
 1000 00|10
 1000 00|11
 Prvih 6 bitova za te brojeve su isti => Maska je onda 2*8 + 6 = 22
-
 ```
