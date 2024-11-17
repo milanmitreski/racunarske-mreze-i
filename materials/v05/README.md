@@ -62,7 +62,7 @@ Međutim, pri adresiranju postoje dodatne restrikcije:
 
 - Prva adresa u mreži je rezervisana i ne može se dodeliti hostu. Ova adresa naziva se **adresa mreže**
 - Poslednja adresa u mreži je rezervisana i ne može se dodeliti hostu. Ova adresa naziva se **broadcast adresa**. (služi za dostavljanje paketa svim čvorovima/hostovima u mreži)
-- Mreže `0.0.0.0-0.255.255.255` i `127.0.0.0-127.255.255.255` (iz klase A) su rezervisane i koriste se (redom) za default rute odnosno loopback adrese
+- Mreže `0.0.0.0-0.255.255.255` i `127.0.0.0-127.255.255.255` (iz klase A) su rezervisane i koriste se (redom) za lokalnu mrežu odnosno loopback adrese
 - Privatne adrese: određeni broj mreža iz klasa A, B i C rezervisan je za upotrebu u privatnim mrežama. To podrazumeva da se pomenute adrese neće propagirati na Internet, odnosno da te adrese ne predstavljaju adrese čvorova na Internetu. Takve adrese koriste se u lokalnim mrežama.
     - 1 mreža iz klase A: `10.0.0.0` - `10.255.255.255`
     - 16 mreža iz klase B: `172.16.0.0` - `172.16.255.255`, ... `172.31.0.0` - `172.31.255.255`
@@ -96,7 +96,7 @@ Dakle, na ovaj način možemo dati skup IP adresa podeliti u mreže različitih 
 
 - `10.11.12.13` - klasa A - ne, privatna adresa
 - `172.30.40.50` - klasa B - ne, privatna adresa
-- `172.30.40.50` - klasa B - može
+- `172.40.50.60` - klasa B - može
 - `127.255.255.255` - klasa A - ne, broadcast adresa
 - `128.0.0.0` - klasa B - ne, adresa mreže
 - `9.256.128.64` - nije validna IP adresa (svi brojevi moraju biti u opsegu $[0,255]$)
@@ -104,7 +104,7 @@ Dakle, na ovaj način možemo dati skup IP adresa podeliti u mreže različitih 
 - `225.225.225.225` - klasa D - ne, multicast adresa
 - `192.168.173.114` - klasa C - ne, privatna adresa
 - `9.10.11.12` - klasa A - može
-- `0.1.2.3` - klasa A - ne, default ruta
+- `0.1.2.3` - klasa A - ne, lokalna mreža
 
 ### Classless adresiranje
 
@@ -357,7 +357,7 @@ tj. 1111 00|00 = 240 , dok je onda broadcast za ptp: 1111 00|11 = 243.
   Adresa mreže 172.21.247.1000 10|00,
   broadcast adresa: 172.21.247.1000 10|11
   ```
-**Zadatak 6.**
+**Zadatak 6.** Ispravljeni tekst: Mrežu `192.168.100.0/22` podeliti u skladu sa datom skicom mreže, pri čemu dodeljivanje kreće od adrese `192.168.101.192/22`
 ![alt text](image3.png)
 
 ```
@@ -409,9 +409,8 @@ U poslednjem bajtu imamo 0000 0|000 za vrednost adrese mreže i
 
 ```
 
-**Zadatak 7.** 
+**Zadatak 7.** Koja je adresa najmanje mreže koja agregira sve dodeljene podmreže?
 ![alt text](image4.png)
-Takođe se u zadatku traži kolika je maska najmanje potrebna da bismo opisali sve podmreže iz zadatka.
 
 ```
 Princip rešavanja je isti kao do sada.
