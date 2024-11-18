@@ -494,17 +494,13 @@ M46:
 adresa mreže: 10.255.131.252/30
 broadcast adresa: 10.255.131.255/30
 
-Kolika je maska potrebna?
+Koja je adresa najmanje mreže koja agregira sve dodeljene podmreže?
 
-1. nacin:
-4*8 + 256*3 + 128 + 64 + 32 = 32 + 768 + 96 + 128 =  800 + 224 = 1024 = 2^10, pa je maska 22, kao 32-10=22
-
-2. nacin:
 Maska je najduzi zajednicki prefiks s leva na desno. Prva dva bajta su svima ista, od treceg se razlikuju. 
 U trećem bajtu imamo 128,129,130,131. Bitovski to je:
 1000 00|00
 1000 00|01
 1000 00|10
 1000 00|11
-Prvih 6 bitova za te brojeve su isti => Maska je onda 2*8 + 6 = 22
+Prvih 6 bitova za te brojeve su isti => Maska je onda 2*8 + 6 = 22 pa je adresa najmanje mreže 10.255.128.0/22
 ```
