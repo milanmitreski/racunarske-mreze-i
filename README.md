@@ -19,3 +19,4 @@ Prakitčni ispit sadrži tri zadatka od kojih se dva zadatka rade u Javi, a tre�
 3. Rad sa adresnim objektima u Javi (`InetAddress, NetworkInterface`)
 4. URL adresiranje u Javi (`URL, URLConnection`)
 5. Adresiranje - classful i classless adresiranje.
+6. TCP Soketi (`Socket, ServerSocket`)
