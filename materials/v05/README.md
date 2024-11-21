@@ -53,8 +53,8 @@ Kako odrediti kojoj klasi pripada data IP adresa? Primetimo da svaka klasa ima p
 Kao što je i rečeno, podela adresa na levi i desni deo zavisi od toga kojoj klasi ta adresa pripada. Drugim rečima, svaku klasu delimo na različit broj mreža:
 
 - Za adrese iz klase A, levi deo adrese je veličine $1\rm B$, dok je desni deo adrese veličine $3\rm B$. Ukupan broj mreža u klasi A je $2^7=128$ (prvi bit je fiksiran na `0`), dok je veličina svake mreže $2^{24}=16\,\,777\,\,216$
-- Za adrese iz klase B,  levi deo adrese je veličine $2\rm B$, dok je desni deo adrese veličine $2\rm B$. Ukupan broj mreža u klasi A je $2^{14}=16\,\,384$ (prva dva bita su fiksirana na `10`), dok je veličina svake mreže $2^{16}=65\,\,536$
-- Za adrese iz klase C,  levi deo adrese je veličine $3\rm B$, dok je desni deo adrese veličine $1\rm B$. Ukupan broj mreža u klasi A je $2^{21}=2\,\,097\,\,152$ (prva tri bita su fiksirana na `110`), dok je veličina svake mreže $2^{8}=256$
+- Za adrese iz klase B,  levi deo adrese je veličine $2\rm B$, dok je desni deo adrese veličine $2\rm B$. Ukupan broj mreža u klasi B je $2^{14}=16\,\,384$ (prva dva bita su fiksirana na `10`), dok je veličina svake mreže $2^{16}=65\,\,536$
+- Za adrese iz klase C,  levi deo adrese je veličine $3\rm B$, dok je desni deo adrese veličine $1\rm B$. Ukupan broj mreža u klasi C je $2^{21}=2\,\,097\,\,152$ (prva tri bita su fiksirana na `110`), dok je veličina svake mreže $2^{8}=256$
 
 Adrese iz klasa D koriste se kao multicast adrese, dok se adrese iz klasa E koriste u eksperimentalne svrhe. Adrese iz klase A, B i C koriste se kao unicast adrese, odnosno adrese koje se dodeljuju korisnicima. 
 
@@ -158,10 +158,10 @@ Dakle, na ovaj način možemo dati skup IP adresa podeliti u mreže različitih 
     17 = 2 * 8 + 1 => raspisujemo treći bajt
     127 - |0111 1111 => nisu svi bitovi u desnom delu jednaki 0 ili 1
   ```
-- `77.46.128.128/25` - može
+- `77.46.128.128/25` - ne, adresa mreže
     ```
     25 = 3 * 8 + 1 => raspisujemo treći bajt
-    128 - 1|000 0000 => nisu svi bitovi u desnom delu jednaki 0 ili 1
+    128 - 1|000 0000 => svi bitovi u desnom delu su jednaki 0 - adresa mreže
   ```
 - `79.111.255.255/12` - ne, adresa mreže
     ```
