@@ -2,7 +2,7 @@
 
 Obavezan kurs na četvrtoj godini Matematičkog fakulteta, za studente smera Informatika\
 Profesor: prof. dr Slavko Gajin\
-Asistenti: Miloje Joksimović, [Milan Mitreski](http://poincare.matf.bg.ac.rs/~milan.mitreski)\
+Asistenti: [Miloje Joksimović](http://www.matf.bg.ac.rs/p/miloje-joksimovic/pocetna/), [Milan Mitreski](http://poincare.matf.bg.ac.rs/~milan.mitreski)\
 Strana kursa na RCUB platformi: [ovde](https://elearning.rcub.bg.ac.rs/moodle/course/view.php?id=1558)
 
 ## Ispitne obaveze
