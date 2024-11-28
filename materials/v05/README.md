@@ -97,7 +97,7 @@ Dakle, na ovaj način možemo dati skup IP adresa podeliti u mreže različitih 
 - `10.11.12.13` - klasa A - ne, privatna adresa
 - `172.30.40.50` - klasa B - ne, privatna adresa
 - `172.40.50.60` - klasa B - može
-- `127.255.255.255` - klasa A - ne, broadcast adresa
+- `127.255.255.255` - klasa A - ne, loopback adresa
 - `128.0.0.0` - klasa B - ne, adresa mreže
 - `9.256.128.64` - nije validna IP adresa (svi brojevi moraju biti u opsegu $[0,255]$)
 - `128.255.255.255` - klasa B - ne, broadcast adresa
@@ -113,8 +113,8 @@ Dakle, na ovaj način možemo dati skup IP adresa podeliti u mreže različitih 
 - `147.91.64.0/22` - ne, adresa mreže\
     _Objašnjenje_: Prvih 22 bita određuju levi deo adrese. Da bi data adresa bila adresa hosta, mora biti različita od adrese mreže i od broadcast adrese. Ovo se ispituje određivanjem levog dela adrese, nakon čega je potrebno utvrditi da li se desni deo adrese sastoji od svih 0 (adresa mreže) ili svih 1 (broadcast adresa).
     ``` 
-            levi deo      |     desni deo    
-    1001 0011.0101 1011.01|00 0000.0000 0000
+              levi deo         | desni deo    
+    1001 0011.0101 1011.0100 00|00.0000 0000
     ```
     S obzirom da su svi bitovi u desnom delu adrese jednaki 0, ova adresa predstavlja adresu mreže.
 - `162.29.94.0/7` - može\
@@ -153,9 +153,9 @@ Dakle, na ovaj način možemo dati skup IP adresa podeliti u mreže različitih 
                         to su svi bitovi u desnom delu jednaki 1 
                         - broadcast adresa 
   ```
-- `1.110.127.255/17` - može
+- `1.110.127.255/16` - može
     ```
-    17 = 2 * 8 + 1 => raspisujemo treći bajt
+    16 = 2 * 8 => raspisujemo treći bajt
     127 - |0111 1111 => nisu svi bitovi u desnom delu jednaki 0 ili 1
   ```
 - `77.46.128.128/25` - ne, adresa mreže
@@ -163,7 +163,7 @@ Dakle, na ovaj način možemo dati skup IP adresa podeliti u mreže različitih 
     25 = 3 * 8 + 1 => raspisujemo treći bajt
     128 - 1|000 0000 => svi bitovi u desnom delu su jednaki 0 - adresa mreže
   ```
-- `79.111.255.255/12` - ne, adresa mreže
+- `79.111.255.255/12` - ne, broadcast adresa
     ```
     12 = 1 * 8 + 4 => raspisujemo drugi bajt
     111 - 0110|1111 => kako su poslednja dva bajt jednak 255a (sve 1), 
@@ -221,7 +221,7 @@ Dakle, na ovaj način možemo dati skup IP adresa podeliti u mreže različitih 
     Adresa mreže: 10.11.12.128/30
       130=1000 00|10, pa posle | idu sve nule.
     Broadcast: 10.11.12.131/30
-      130=1000 00|10, pa posle maske idu svi bitovi 1/
+      130=1000 00|10, pa posle maske idu svi bitovi 1
     Prvi: 10.11.12.129/30
     Poslednji: 10.11.12.130/30
 
@@ -229,7 +229,7 @@ Dakle, na ovaj način možemo dati skup IP adresa podeliti u mreže različitih 
   ```
 
 
-**Zadatak 4.** Skup adresa 178.148.0.0/24 podeliti na naredne podmreže
+**Zadatak 4.** Skup adresa `178.148.0.0/24` podeliti na naredne podmreže
 
   - A ima 120 računara
   - B ima 61 računara
@@ -357,7 +357,7 @@ tj. 1111 00|00 = 240 , dok je onda broadcast za ptp: 1111 00|11 = 243.
   Adresa mreže 172.21.247.1000 10|00,
   broadcast adresa: 172.21.247.1000 10|11
   ```
-**Zadatak 6.** Ispravljeni tekst: Mrežu `192.168.100.0/22` podeliti u skladu sa datom skicom mreže, pri čemu dodeljivanje kreće od adrese `192.168.101.192/22`
+**Zadatak 6.** Ispravljeni tekst: Mrežu `192.168.100.0/22` podeliti u skladu sa datom skicom mreže, pri čemu dodeljivanje kreće od adrese `192.168.101.192`
 ![alt text](image3.png)
 
 ```
