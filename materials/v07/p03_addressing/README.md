@@ -25,7 +25,7 @@ LAN1 - broj potrebnih adresa: 327 + 1 (ruter) + 2 (adresa mreže i broadcast) = 
      - primetimo da ova adresa ne može predstavljati adresu mreže sa maskom /23
      - potrebno je odrediti prvu sledeću adresu koja može predstavljati adresu takve mreže
      - potrebno je da desni deo mreže bude 0.0000 0000 pa je prva takva adresa
-     - 0000 1010.0011 0010.0010 111|0 0000 0000/22 tj. 10.50.46.0/23
+     - 0000 1010.0011 0010.0010 111|0 0000 0000/23 tj. 10.50.46.0/23
      - adresa mreže:     10.50.46.0/23
      - broadcast adresa: 10.50.47.255/23
 
