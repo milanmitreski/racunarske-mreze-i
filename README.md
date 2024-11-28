@@ -14,10 +14,11 @@ Prakitčni ispit sadrži tri zadatka od kojih se dva zadatka rade u Javi, a tre�
 
 ## Obrađene teme na kursu
 
-1. Ulazno/izlazni tokovi podataka u Javi (`InputStream, OutputStream, Reader, Writer`)
-2. Višenitno programiranje u Javi (`Thread, Runnable, BlockingQueue`)
-3. Rad sa adresnim objektima u Javi (`InetAddress, NetworkInterface`)
-4. URL adresiranje u Javi (`URL, URLConnection`)
+1. Ulazno/izlazni tokovi podataka u Javi (`InputStream, OutputStream, Reader, Writer`).
+2. Višenitno programiranje u Javi (`Thread, Runnable, BlockingQueue`).
+3. Rad sa adresnim objektima u Javi (`InetAddress, NetworkInterface`).
+4. URL adresiranje u Javi (`URL, URLConnection`).
 5. Adresiranje - classful i classless adresiranje.
-6. TCP Soketi (`Socket, ServerSocket`)
-7. TCP Soketi (nastavak). Adresiranje (vežbanje)
+6. TCP Soketi (`Socket, ServerSocket`).
+7. TCP Soketi (nastavak). Adresiranje (vežbanje).
+8. UDP Soketi (`DatagramSocket`, `DatagramPacket`).
