@@ -1,7 +1,5 @@
 package materials.v08.p02_datetime;
 
-import kotlin.text.Charsets;
-
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -27,7 +25,7 @@ public class DateTimeClient {
                 return;
             }
 
-            byte[] optionBytes = option.getBytes(Charsets.US_ASCII);
+            byte[] optionBytes = option.getBytes(StandardCharsets.US_ASCII);
             DatagramPacket packetToSend = new DatagramPacket(
                     optionBytes, optionBytes.length, InetAddress.getByName(SERVER_HOST), SERVER_PORT
             );
