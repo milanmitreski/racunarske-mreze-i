@@ -1,0 +1,4 @@
+Hello World!
+250
+true
+Great! 3.2
