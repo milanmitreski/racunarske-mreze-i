@@ -1,0 +1,43 @@
+PREDISPITNE OBAVEZE:
+--------------------
+
+DOMACI ZADACI I TESTOVI:
+*) Testovi ce biti organizovani online i pokrivace gradivo sa predavanja
+*) Domaci zadaci sa vezbi ce se raditi kuci i resenja ce biti slata asistentu
+*) Za svaki test/domaci zadatak, bice jasno naznacen rok za predaju
+*) Ukupno nose 20 poena (10 za testove i 10 za domace zadatke)
+*) Nema pragova
+
+SEMINARSKI RAD:
+*) Prakticna realizacija odredjene metode automatskog rezonovanja na racunaru
+*) Izbor teme sredinom semestra
+*) Rok za predaju: najkasnije nedelju dana pre polaganja usmenog dela ispita
+*) Rad i njegovu odbranu ocenjuje profesor
+*) Nosi 20 poena
+*) Nema praga
+
+
+ISPIT:
+------
+
+PRAKTICNI ISPIT:
+*) Radi se na racunaru
+*) Pokriva gradivo sa vezbi
+*) Zadatke priprema i radove pregleda asistent
+*) Nosi 30 poena
+*) Prag 12 poena
+
+USMENI ISPIT:
+*) Polaze se usmeno kod profesora
+*) Spisak ispitnih pitanja bice blagovremeno objavljen
+*) Nosi 30 poena
+*) Prag: 12 poena (+25% za svako pitanje)
+
+Jednom polozen prakticni vazi do kraja skolske godine (cak i ako
+student padne usmeni u medjuvremenu).
+
+Na usmeni ispit moze izaci samo student koji je prethodno na
+prakticnom delu ispita ostvario prag.
+
+Da bi ispit bio polozen, potrebno je, pored pojedinacnih pragova koji
+su ranije navedeni, osvojiti ukupno bar 51 poen.
