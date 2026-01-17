@@ -7,6 +7,7 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class NumberWorker implements Runnable {
     private Socket client;
@@ -14,7 +15,7 @@ public class NumberWorker implements Runnable {
 
     public NumberWorker(Socket client) {
         this.client = client;
-        this.numberToGuess = new Random().nextInt(1, 101);
+        this.numberToGuess = ThreadLocalRandom.current().nextInt(1, 101);
     }
 
     private void serve() {
