@@ -20,5 +20,8 @@ Prakitčni ispit sadrži tri zadatka od kojih se dva zadatka rade u Javi, a tre�
 4. URL adresiranje u Javi (`URL, URLConnection`).
 5. Adresiranje - classful i classless adresiranje.
 6. TCP Soketi (`Socket, ServerSocket`).
-7. TCP Soketi (nastavak). Adresiranje (vežbanje).
-8. UDP Soketi (`DatagramSocket`, `DatagramPacket`).
+7. TCP Soketi.
+8. TCP Soketi.
+9. UDP Soketi (`DatagramSocket`, `DatagramPacket`).
+10. UDP Soketi.
+11. UDP Soketi.
