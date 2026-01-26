@@ -14,7 +14,7 @@ public class UDPIntro {
             int port = 12345;
 
             String message = "Hello World!";
-            byte[] messageBytes = message.getBytes();
+            byte[] messageBytes = message.getBytes(StandardCharsets.UTF_8);
 
             DatagramPacket packetToSend = new DatagramPacket(
                     messageBytes, messageBytes.length, host, port
