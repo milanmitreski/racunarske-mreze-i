@@ -1,4 +1,4 @@
-# Računarske mreže (I), 2024/2025
+# Računarske mreže (I), 2025/2026
 
 Obavezan kurs na četvrtoj godini Matematičkog fakulteta, za studente smera Informatika\
 Profesor: prof. dr Slavko Gajin\
@@ -7,10 +7,7 @@ Strana kursa na RCUB platformi: [ovde](https://elearning.rcub.bg.ac.rs/moodle/co
 
 ## Ispitne obaveze
 
-Teorijski ispit: 50 poena\
-Praktični ispit: 50 poena
-
-Prakitčni ispit sadrži tri zadatka od kojih se dva zadatka rade u Javi, a treći zadatak (rutiranje) se radi na papiru, pri čemu se odgovori predaju preko Moodle testa.
+Prakitčni ispit sadrži dva zadatk koji se rade u Javi.
 
 ## Obrađene teme na kursu
 
