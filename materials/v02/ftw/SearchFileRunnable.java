@@ -1,4 +1,4 @@
-package materials.v02.ftw;
+package v02.ftw;
 
 import java.io.IOException;
 import java.nio.file.Path;

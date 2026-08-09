@@ -1,4 +1,4 @@
-package materials.v02.ftw;
+package v02.ftw;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

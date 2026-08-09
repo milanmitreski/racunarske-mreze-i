@@ -1,0 +1,5 @@
+materials/konsultacije0908/tests/hello.c
+materials/konsultacije0908/tests/readme.txt
+materials/konsultacije0908/tests/dir/helloWorld.c
+materials/konsultacije0908/tests/dir/palind.c
+materials/konsultacije0908/tests/pi.c

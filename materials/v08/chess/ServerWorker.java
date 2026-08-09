@@ -94,9 +94,7 @@ public class ServerWorker implements Runnable {
                             continue;
                         }
 
-                        synchronized (Server.TABLE) {
-                            Server.TABLE.get(id).setElo(elo);
-                        }
+                        Server.TABLE.get(id).setElo(elo);
 
                         clientOut.println("ChessPlayer information updated.");
                     }
@@ -109,9 +107,7 @@ public class ServerWorker implements Runnable {
                         name = line.split(" ", 2)[1];
                         id = Server.ID_COUNTER.incrementAndGet();
 
-                        synchronized (Server.TABLE) {
-                            Server.TABLE.put(id, new ChessPlayer(name, 1300));
-                        }
+                        Server.TABLE.put(id, new ChessPlayer(name, 1300));
 
                         clientOut.println("ChessPlayer inserted.");
                     }
