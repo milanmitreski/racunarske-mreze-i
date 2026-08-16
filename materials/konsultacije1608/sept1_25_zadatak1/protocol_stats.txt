@@ -1,0 +1,5 @@
+HTTP(80): 2 active.
+HTTPS(443): 2 active.
+FTP(21): 0 active.
+SSH(22): 2 active.
+SMTP(25): 0 active.
